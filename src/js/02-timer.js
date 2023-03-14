@@ -20,7 +20,6 @@ const options = {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    console.log(selectedDates[0]);
     selectedDate = selectedDates[0].getTime();
     curentDate = new Date().getTime();
     if (selectedDate <= curentDate) {
