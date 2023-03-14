@@ -61,7 +61,7 @@ function addLeadingZero(value) {
 
 startBtn.addEventListener('click', () => {
   let timeDifference;
-  timerId = setInterval(() => {
+  let timerId = setInterval(() => {
     curentDate = new Date().getTime();
     timeDifference = selectedDate - curentDate;
     let dateOutput = convertMs(timeDifference);
