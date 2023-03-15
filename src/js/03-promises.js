@@ -9,11 +9,11 @@ function createPromise(position, delay) {
   const shouldResolve = Math.random() > 0.3;
   if (shouldResolve) {
     setTimeout(() => {
-      Promise.resolve({ position, delay });
+      return Promise.resolve({ position, delay });
     }, delay);
   } else {
     setTimeout(() => {
-      Promise.reject({ position, delay });
+      return Promise.reject({ position, delay });
     }, delay);
   }
 }
