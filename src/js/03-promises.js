@@ -6,16 +6,17 @@ const amountInput = document.querySelector('[name="amount"]');
 const form = document.querySelector('.form');
 
 function createPromise(position, delay) {
-  const shouldResolve = Math.random() > 0.3;
-  if (shouldResolve) {
+  return new Promise((resolve, reject) => {
+    const shouldResolve = Math.random() > 0.3;
+
     setTimeout(() => {
-      return Promise.resolve({ position, delay });
+      if (shouldResolve) {
+        resolve({ position, delay });
+      } else {
+        reject({ position, delay });
+      }
     }, delay);
-  } else {
-    setTimeout(() => {
-      return Promise.reject({ position, delay });
-    }, delay);
-  }
+  });
 }
 
 form.addEventListener('submit', event => {
